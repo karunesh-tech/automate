@@ -17,6 +17,7 @@ pkg_deps=(
   "${local_platform_tools_origin:-chef}/automate-platform-tools"
   # WARNING: Version pin managed by .expeditor/update_chef_server.sh
   "${vendor_origin}/oc_bifrost/14.12.21/20220127191941"
+  "${vendor_origin}/oc_bifrost/14.13.58/20220318061259"
 )
 
 pkg_binds=(
