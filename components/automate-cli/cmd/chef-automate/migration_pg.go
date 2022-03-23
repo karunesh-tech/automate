@@ -14,6 +14,7 @@ import (
 	"time"
 
 	"github.com/chef/automate/components/automate-cli/pkg/status"
+	"github.com/chef/automate/lib/platform/sys"
 	"github.com/chef/automate/lib/user"
 	"github.com/spf13/cobra"
 )
@@ -370,7 +371,7 @@ func executePgdata13ShellScript() error {
 		fmt.Printf("failed fetching hab uid and gid: %s\n", err.Error())
 		return err
 	}
-	c.SysProcAttr.Credential = &syscall.Credential{Uid: uint32(uid), Gid: uint32(gid)}
+	c.SysProcAttr.Credential = sys.SysProcAttrWithCred(uint32(uid), uint32(gid)).Credential
 	err = checkErrorForCommand(c)
 	if err != nil {
 		return err
@@ -455,7 +456,7 @@ func executeAutomateCommandAsync(command string, args []string, helpDocs string,
 	if err != nil {
 		return err
 	}
-	c.SysProcAttr.Credential = &syscall.Credential{Uid: uint32(uid), Gid: uint32(gid)}
+	c.SysProcAttr.Credential = sys.SysProcAttrWithCred(uint32(uid), uint32(gid)).Credential
 
 	err = c.Start()
 	if err != nil {
