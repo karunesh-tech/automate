@@ -108,7 +108,7 @@ func runCleanup(cmd *cobra.Command, args []string) error {
 
 	} else {
 		return errors.New(
-			"pg migration will only support 9.6 pg version for now, your pg version is: " + string(oldPgVersion),
+			"pg migration will only support 9.6 pg version for now, your pg version is: " + oldPgVersion,
 		)
 	}
 
@@ -144,7 +144,7 @@ func runMigratePgCmd(cmd *cobra.Command, args []string) error {
 
 		} else {
 			return errors.New(
-				"pg migration will only support 9.6 pg version for now, your pg version is: " + string(oldPgVersion),
+				"pg migration will only support 9.6 pg version for now, your pg version is: " + oldPgVersion,
 			)
 		}
 
