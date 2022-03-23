@@ -14,12 +14,12 @@ pkg_license=("Chef-MLSA")
 pkg_upstream_url="https://www.chef.io/automate"
 pkg_deps=(
   #core/runit/2.1.2/20200403133549
-  core/runit/2.1.2/20210826171036
-  chef/mlsa/1.0.1/20200421170200
+  core/runit
+  chef/mlsa
   "${local_platform_tools_origin:-chef}/automate-platform-tools"
   # WARNING: Version pin managed by .expeditor/update_chef_server.sh
   #"${vendor_origin}/oc_erchef/14.12.21/20220127191941"
-  ${vendor_origin}/oc_erchef/14.13.58/20220318061259
+  "${vendor_origin}/oc_erchef/14.13.58/20220318061259"
 )
 
 pkg_build_deps=(
