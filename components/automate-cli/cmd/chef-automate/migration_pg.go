@@ -104,6 +104,7 @@ func runCleanup(cmd *cobra.Command, args []string) error {
 		} else {
 			return errors.New("please provide valid input for data flag")
 		}
+		//nolint
 		cleanUp()
 
 	} else {
