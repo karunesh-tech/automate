@@ -17,7 +17,7 @@ exec 2>&1
 #
 
 
-
+#shellcheck disable=SC1091
 source /hab/svc/automate-postgresql/config/functions.sh
 
 mkdir -p /hab/svc/automate-postgresql/config/conf.d
