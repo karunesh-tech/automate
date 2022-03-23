@@ -1,4 +1,5 @@
 #!/hab/pkgs/core/bash/5.1/20210826055113/bin/bash
+#shellcheck disable=SC1128
 #
 shopt -s extglob
 
